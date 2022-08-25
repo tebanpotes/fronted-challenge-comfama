@@ -1,1 +1,66 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~mdb-ui-kit/css/mdb.min.css';
+body, html {
+    height: 100%;
+    background-image: url('/assets/bg.jpg');
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}  
+
+body{
+    font-family: 'Lato-Regular';
+}
+
+@font-face {
+    font-family: 'Lato-Bold';
+    src: url('assets/Lato-Bold.ttf');
+}
+
+.Lato-Bold{
+    font-family: 'Lato-Bold';
+}
+
+@font-face {
+    font-family: 'Lato-Regular';
+    src: url('assets/Lato-Regular.ttf');
+}
+
+.Lato-Regular{
+    font-family: 'Lato-Regular';
+}
+
+.recommended-info-not{
+    font-size: 0.8em;
+    background-color: #FFE7E5;
+    color: #FF5758 ;
+    padding: 2px 5px 2px 5px;
+    border-radius: 10px;
+}
+.recommended-info-fun{
+    font-size: 0.8em;
+    background-color: #E9E9FF;
+    color: #8789FF ;
+    padding: 2px 5px 2px 5px;
+    border-radius: 10px;
+}
+.recommended-info-great{
+    font-size: 0.8em;
+    background-color: #E4F8F0;
+    color: #1EAB7D ;
+    padding: 2px 5px 2px 5px;
+    border-radius: 10px;
+}
+
+@media (max-width: 468px){
+
+    .recommended-info-great{
+        font-size: 0.6em;
+        background-color: #E4F8F0;
+        color: #1EAB7D ;
+        padding: 2px 2px 2px 2px;
+        border-radius: 10px;
+    }
+        
+}

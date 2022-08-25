@@ -1,0 +1,47 @@
+
+<div class="container mt-5">
+    <div class="row ">
+        <a role="button my-2" class=" col-md-3" *ngFor="let anime of resultSearch">
+            <div class="row bg-image hover-overlay">
+                <img src="{{ anime.images.jpg.image_url }}" alt="" class="img-fluid w-100">
+                <div class="mask " style="background-color: rgba(0, 0, 0, 0.8)">
+                    <div class="mx-2 d-flex r flex-column  justify-content-around h-100 text-white-50">
+                        <span *ngIf="anime.recommended == 'I do not recommendend it'" class="recommended-info-not">{{ anime.recommended }}</span>
+                        <span *ngIf="anime.recommended == 'You may have fun'" class="recommended-info-fun">{{ anime.recommended }}</span>
+                        <span *ngIf="anime.recommended == 'Great, this is one of the best anime'" class="recommended-info-great">{{ anime.recommended }}</span>
+                        <p class="h4 text-white text-center Lato-Bold">{{ anime.title | slice:0:20 }}</p>
+
+                        <p class="text-white-50 d-none-xs d-none d-none-sm d-md-block">{{ anime.background | slice:0:100}}..</p>
+
+                        <span class="fw-bold spmobile">Puntuación: <span class="text-white mx-1 spmobile">{{ anime.score }}/10</span><i
+                                class="pi pi-heart-fill text-danger" style="font-size: 1rem"></i></span>
+
+                        <div class="text-center">
+                            <button pButton type="button" pRipple (click)="viewTrailer(anime.trailer.embed_url)"
+                                class="p-button-raised p-button-rounded fw-bold btn-show-more my-3">Ver </button>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </a>
+    </div>
+    
+
+</div>
+
+<p-dialog  [(visible)]="showTrailer" [style]="{width: '70vw'}">
+
+    <iframe  class="ratio ratio-16x9" 
+                  [src]="this.video" 
+                  scrolling="no" 
+                  frameborder="0" 
+                  allowfullscreen="true" 
+                  height="350"
+                  webkitallowfullscreen="true"></iframe> 
+   
+</p-dialog>
+
+<ngx-ui-loader pbColor="#396afc" fgsColor="#396afc" ></ngx-ui-loader>

@@ -1,0 +1,62 @@
+:host{
+    ::ng-deep .p-dialog {
+        // border-bottom: 0 none;
+        // background: #ffffff;
+        // color: #495057;
+        // padding: 1.5rem;
+        // border-top-right-radius: 50px;
+        // border-top-left-radius: 50px;
+        height: 100%;
+    }
+
+    ::ng-deep .p-dialog .p-dialog-content {
+        background: transparent;
+        color: #495057;
+        padding: 0 1.5rem 2rem 1.5rem;
+        height: 100%;
+    }
+    ::ng-deep .p-dialog .p-dialog-header {
+        border-bottom: 0 none;
+        background: transparent;
+        color: #495057;
+        padding: 1.5rem;
+        border-top-right-radius: 3px;
+        border-top-left-radius: 3px;
+    }
+}
+.btn-show-more{
+    background: #FF416C;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FF4B2B, #FF416C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border: 0;
+    // margin-left: 3rem;
+    padding: 0.8rem 3rem 0.8rem 3rem;
+
+}
+.btn-show-more:hover{
+    background: #FF416C;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FF4B2B, #FF416C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border: 0;
+    // margin-left: 3rem;
+    padding: 0.8rem 3rem 0.8rem 3rem;
+
+}
+
+@media (max-width: 468px){
+    .btn-show-more{
+        padding: 0.2rem 1.5rem 0.2rem 1.5rem;
+    }
+
+    .title-mobile{
+        font-size: 0.9em;
+    }
+
+    .spmobile{
+        font-size: 0.8em;
+    }
+
+    .col-md-3{
+        width: 50%;
+    }
+          }

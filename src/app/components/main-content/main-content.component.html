@@ -1,0 +1,65 @@
+<div class="row py-3">
+            
+    <div class="col-md-6 text-center">
+        <div class="mt-1">
+            <h1 class="text-white Lato-Bold mb-0">Busca entretenimiento</h1>
+            <h4 class="text-white-50 ">Explora y disfruta tus animes favoritos</h4>
+
+            <div class="row">
+                <div class="">
+                    <button pButton type="button" pRipple (click)="goExplore()"
+                        class="p-button-raised p-button-rounded fw-bold btn-show-more my-3">Explorar</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<p-carousel [value]="animes" [numVisible]="5" [numScroll]="1" class="" [responsiveOptions]="responsiveOptions"
+    styleClass="carouselperson">
+    <ng-template let-animes pTemplate="item">
+        <a role="button" class="cardanime">
+            <div class="row bg-image hover-overlay">
+                <img src="{{ animes.images.webp.image_url }}" alt="" class="img-fluid w-100">
+                <div class="mask " style="background-color: rgba(0, 0, 0, 0.8)">
+                    <div class="mx-2 d-flex r flex-column  justify-content-around h-100 text-white-50">
+                        <span *ngIf="animes.recommended == 'I do not recommendend it'" class="recommended-info-not ">{{ animes.recommended }}</span>
+                        <span *ngIf="animes.recommended == 'You may have fun'" class="recommended-info-fun">{{ animes.recommended }}</span>
+                        <span *ngIf="animes.recommended == 'Great, this is one of the best anime'" class="recommended-info-great">{{ animes.recommended }}</span>
+                        <p class="h4 text-white text-center Lato-Bold title-mobile">{{ animes.title }}</p>
+
+                        <p class="text-white-50 d-none-xs d-none d-none-sm d-md-block">{{ animes.background | slice:0:100}}..</p>
+
+                        <span class="fw-bold spmobile">Score: <span class="text-white mx-1 spmobile">{{ animes.score }}/10</span><i
+                                class="pi pi-heart-fill text-danger" style="font-size: 1rem"></i></span>
+
+                        <div class="text-center">
+                            <button pButton type="button" pRipple (click)="viewTrailer(animes.trailer.embed_url)"
+                                class="p-button-raised p-button-rounded fw-bold btn-show-more my-3">Ver </button>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </a>
+
+    </ng-template>
+</p-carousel>
+
+<p-dialog  [(visible)]="showTrailer" [style]="{width: '70vw'}">
+
+    <iframe  class="ratio ratio-16x9" 
+                  [src]="this.video" 
+                  scrolling="no" 
+                  frameborder="0" 
+                  allowfullscreen="true" 
+                  height="350"
+                  webkitallowfullscreen="true"></iframe> 
+   
+</p-dialog>
+
+<ngx-ui-loader pbColor="#396afc" fgsColor="#396afc"></ngx-ui-loader>
